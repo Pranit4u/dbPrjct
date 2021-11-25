@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 
-const GenerateBills = () => {
+const GenerateBills = ({user}) => {
     const d = new Date;
     const date = d.getDate();
     return (
-        date === 19 ? <Generate /> : <div>You can perform this action only at start of the month</div>
+        date === 24 ? <Generate user={user}/> : <div>You can perform this action only at start of the month</div>
     )
    
 }
 
-const Generate = () => {
+const Generate = ({user}) => {
     const [cost, setCost] = useState()
     const [meals,setMeals] = useState([])
     const [bills, setBills] = useState({})
@@ -28,11 +28,12 @@ const Generate = () => {
         }
         let d = new Date()
         let m = d.getMonth()
-        let y = d.getFullYear()
+        let y = d.getFullYear() 
         const s = `${y}-${m<10?`0${m}`:`${m}`}-`
         const res = await axios.get('http://localhost:5000/bills/generate', {
             params: {
-              sub: s
+              sub: s,
+              mess: user.mess
             }
           });
         setMeals(res.data)
@@ -41,9 +42,15 @@ const Generate = () => {
         meals.map((meal,index) => {
             if(temp[meal.roll]){
                 temp[meal.roll] = Number(temp[meal.roll]) + Number(cost)
+                if(meal.meal.extra !== ""){
+                    temp[meal.roll] = Number(temp[meal.roll]) + 20
+                }
             }
             else{
                 temp[meal.roll] = Number(cost)
+                if(meal.meal.extra !== ""){
+                    temp[meal.roll] = Number(temp[meal.roll]) + 20
+                }
             }
         })
         setBills(temp)

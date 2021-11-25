@@ -31,11 +31,11 @@ const Dashboard = ({user, setLoginUser}) => {
 
             <ul>
                 <li><button onClick={logout}>LogOut</button></li>
-                <li>Feed Details</li>
+                <li><nav><Link to="/feedDetails">Feed Details</Link></nav></li>
                 <li><nav><Link to="/generateBills">Generate Bills</Link></nav></li>
                 <li><nav><Link to="/resolveComplaints">Resolve Complaints</Link></nav></li>
                 <li><nav><Link to="/giveFood">Give Food</Link></nav></li>
-                <li>Mark Entries</li>
+                <li><nav><Link to="/markEntries">Mark Entries</Link></nav></li>
                 
             </ul> 
 

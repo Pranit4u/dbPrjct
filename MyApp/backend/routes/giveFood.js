@@ -15,12 +15,14 @@ router.route('/add').post((req,res) => {
     const breakfast = req.body.b;
     const lunch = req.body.l;
     const dinner = req.body.d;
+    const extra = req.body.e;
     const date = getCurrentDate();
 
     const newMenuData = new MenuData({
         breakfast,
         lunch,
         dinner,
+        extra,
         date
     });
 

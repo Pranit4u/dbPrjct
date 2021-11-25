@@ -14,6 +14,8 @@ import PayBills from './components/studfunc/PayBills';
 import ResolveComplaints from './components/contractorfunc/ResolveComplaints';
 import GiveFood from './components/contractorfunc/GiveFood';
 import GenerateBills from './components/contractorfunc/GenerateBills';
+import FeedDetails from './components/contractorfunc/FeedDetails';
+import MarkEntries from './components/contractorfunc/MarkEntries';
 
 function App() {
 
@@ -27,6 +29,7 @@ function App() {
         <Routes>
         <Route path="/" element={user && user.email ? <Dashboard user= {user} setLoginUser = {setLoginUser}/> : <ToLogin />} /> 
         <Route path="/register" element={<Register />} />
+        <Route path="/feedDetails" element={<FeedDetails user={user}/>} />
         <Route path="/login" element={<Login setLoginUser = {setLoginUser}/>} />
         <Route path="/fileComplaint" element={<Filecomplaint user={user}/>} />
         <Route path="/changePassword" element={<ChangePassword user={user} setLoginUser = {setLoginUser}/>} />
@@ -37,6 +40,7 @@ function App() {
         <Route path="/resolveComplaints" element={<ResolveComplaints user={user} />} />
         <Route path="/giveFood" element={<GiveFood user={user} />} />
         <Route path="/generateBills" element={<GenerateBills user={user} />} />
+        <Route path="/markEntries" element={<MarkEntries user={user} />} />
 
       </Routes>
       </div>

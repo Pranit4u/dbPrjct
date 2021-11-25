@@ -5,11 +5,12 @@ router.route('/add').post((req,res) => {
     const roll = req.body.roll;
     const date = req.body.date;
     const meal = req.body.meal;
-
+    const mess = req.body.mess;
     const newMealData = new MealData({
         roll,
         date,
-        meal
+        meal,
+        mess
     });
 
     newMealData.save((err,result) => {
@@ -20,6 +21,15 @@ router.route('/add').post((req,res) => {
             res.send({message:"1"});
         }
     });
+});
+
+router.route('/get').get((req,res) => {
+    const mess = req.query.mess;
+    const date = req.query.date;
+
+    MealData.find({mess: mess, date: date})
+        .then(mealData => res.json(mealData))
+        .catch(err => res.status(400).json('Error: '+ err));
 });
   
 module.exports = router;

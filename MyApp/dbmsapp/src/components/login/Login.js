@@ -58,48 +58,60 @@ const Login = ({ setLoginUser }) => {
     }
 
     return (
-        <>
-            <div>
-                <div>
-                    Log In to your account
-                </div>
-                {user.isStud === "student" ? <span>
-                    Dont have an account ?
-                    <nav>
-                        <Link to="/register">Register</Link>
-                    </nav>
-                </span> : <div></div>}
-
-                <div>
-                    <form onSubmit={login}>
-
-                        <input type="radio" checked={user.isStud === "student"} id="student" name="isStud" value="student" onChange={handleChange} />
-                        <label htmlFor="student">Student</label><br />
-                        <input type="radio" checked={user.isStud === "contractor"} id="contractor" name="isStud" value="contractor" onChange={handleChange} />
-                        <label htmlFor="contractor">Contractor</label><br />
-
-                        <div>
-                            <input type="text" id="create-account-first-name" name="email" value={user.email} onChange={handleChange} placeholder="Email" />
+        <div className="col-xl-8 order-xl-1">
+            <div className="card bg-secondary shadow">
+                <div className="card-body">
+                    <div className="row align-items-center">
+                        <div className="col-8">
+                            <h2 className="text-muted mb-4">Login to your Account</h2>
                         </div>
+                    </div>
+                    {user.isStud === "student" ?
+                        <span>
+                            <h3 className="form-control-label">Dont have an account ?
+                                <nav>
+                                    <Link to="/register"><u>Register</u></Link>
+                                </nav>
+                            </h3>
+                        </span> : <div></div>}
 
-                        <div>
-                            <input type="password" id="create-account-email" name="password" value={user.password} onChange={handleChange} placeholder="password" />
-                        </div>
-                        <div>
-                            <input name="Login" type="submit" />
-                        </div>
-                    </form>
+                    <div>
+                        <form onSubmit={login}>
+                            <div className="pl-lg-4">
+                                <div className="row">
+                                    <div className="col-lg-6">
+                                        <input type="radio" checked={user.isStud === "student"} id="student" name="isStud" value="student" onChange={handleChange} />
+                                        <label className="form-control-label" htmlFor="student">Student</label><br />
+                                        <input type="radio" checked={user.isStud === "contractor"} id="contractor" name="isStud" value="contractor" onChange={handleChange} />
+                                        <label className="form-control-label" htmlFor="contractor">Contractor</label><br />
 
+                                        <div className="form-group focused">
+                                            <label htmlFor="email" className="form-control-label" >Email</label>
+                                            <input type="text" id="email" name="email" value={user.email} onChange={handleChange} className="form-control form-control-alternative" placeholder="Email" />
+                                        </div>
 
+                                        <div className="form-group focused">
+                                            <label htmlFor="password" className="form-control-label" >Password</label>
+                                            <input type="password" id="password" name="password" value={user.password} onChange={handleChange} className="form-control form-control-alternative" placeholder="password" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <input name="Login" className="btn btn-sm btn-primary" type="submit" />
+                            </div>
+                        </form>
+
+                        <br />
+                        <nav className="form-control-label">
+                            <Link to="/"><u>Home</u></Link>
+                        </nav>
+                    </div>
                 </div>
             </div>
-            <div>
-                <nav>
-                    <Link to="/">Home</Link>
-                </nav>
-            </div>
+        </div>
 
-        </>
+
     )
 }
 

@@ -3,7 +3,7 @@ import '../../App.css';
 import axios from 'axios';
 
 
-const ChangePassword = ({user, setLoginUser}) => {
+const ChangePassword = ({ user, setLoginUser }) => {
     const [u, setUser] = useState({
         roll: user.roll,
         oldPassword: "",
@@ -22,7 +22,7 @@ const ChangePassword = ({user, setLoginUser}) => {
 
     const savePassword = (e) => {
         e.preventDefault();
-        if(u.newPassword1 !== u.newPassword2){
+        if (u.newPassword1 !== u.newPassword2) {
             alert("Incorrect new password entry");
             return;
         }
@@ -31,9 +31,9 @@ const ChangePassword = ({user, setLoginUser}) => {
                 const r = res.data.message;
                 switch (r) {
                     case "1":
-                        setLoginUser({...user,password: u.newPassword1});
+                        setLoginUser({ ...user, password: u.newPassword1 });
                         alert("Password Changed Successfully");
-                        setUser({...u,oldPassword: "", newPassword1: "", newPassword2:""});
+                        setUser({ ...u, oldPassword: "", newPassword1: "", newPassword2: "" });
                         break;
                     case "0":
                         alert("Invalid Old Password");
@@ -43,38 +43,43 @@ const ChangePassword = ({user, setLoginUser}) => {
                         break;
                 }
             })
-            .catch((e) =>{ 
+            .catch((e) => {
                 console.log("error catch ->" + e)
             })
-        }
+    }
 
 
-        return (
-            <div className="card login-form">
+    return (
+        <div className="col-xl-8 order-xl-1">
+            <div className="card bg-secondary shadow">
                 <div className="card-body">
-                    <h3 className="card-title text-center">Change password</h3>
-
+                    <div className="row align-items-center">
+                        <div className="col-8">
+                            <h2 className="text-muted mb-4">Change Password</h2>
+                        </div>
+                    </div>
 
                     <div className="card-text">
                         <form onSubmit={savePassword}>
                             <div className="form-group">
-                                <label for="exampleInputEmail1">Your old password</label>
-                                <input type="password" name="oldPassword" value={u.oldPassword} onChange={handleChange} className="form-control form-control-sm"/>
+                                <label className="form-control-label" htmlFor="oldPassword">Your old password</label>
+                                <input type="password" id="oldPassword" name="oldPassword" value={u.oldPassword} onChange={handleChange} className="form-control form-control-sm" />
                             </div>
                             <div className="form-group">
-                                <label for="exampleInputEmail1">Your new password</label>
-                                <input type="password" name="newPassword1" minLength={6} value={u.newPassword1} onChange={handleChange} className="form-control form-control-sm"/>
+                                <label className="form-control-label" htmlFor="newPassword1">Your new password</label>
+                                <input type="password" id="newPassword1" name="newPassword1" minLength={6} value={u.newPassword1} onChange={handleChange} className="form-control form-control-sm" />
                             </div>
                             <div className="form-group">
-                                <label for="exampleInputEmail1">Repeat new password</label>
-                                <input type="password" name="newPassword2" minLength={6} value={u.newPassword2} onChange={handleChange} className="form-control form-control-sm"/>
+                                <label className="form-control-label" htmlFor="newPassword2">Repeat new password</label>
+                                <input type="password" id="newPassword1" name="newPassword2" minLength={6} value={u.newPassword2} onChange={handleChange} className="form-control form-control-sm" />
                             </div>
-                            <input type="submit" value="Confirm" className="btn btn-primary btn-block submit-btn"/>
+                            <input type="submit" value="Confirm" className="btn btn-primary btn-block submit-btn" />
                         </form>
                     </div>
                 </div>
             </div>
-        )
+        </div>
+    )
 
 }
 

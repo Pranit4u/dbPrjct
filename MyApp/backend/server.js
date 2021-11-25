@@ -38,6 +38,8 @@ const resolveComplaintsRouter = require('./routes/resolveComplaints');
 app.use('/resolveComplaints',resolveComplaintsRouter);
 const giveFoodRouter = require('./routes/giveFood');
 app.use('/giveFood',giveFoodRouter);
+const feedDeatilsRouter = require('./routes/feedDetails');
+app.use('/feedDetails',feedDeatilsRouter);
 
 
 app.listen(port, () => {

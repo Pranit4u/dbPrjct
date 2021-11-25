@@ -1,6 +1,6 @@
 const router = require('express').Router();
 let BillData = require('../models/bills.model');
-let MealData = require('../models/meal.model')
+let MealData = require('../models/meal.model');
 router.route('/get').get((req,res) => {
     const roll = req.query.roll
     BillData.find({roll: roll, paid:false})
@@ -9,8 +9,9 @@ router.route('/get').get((req,res) => {
 });
 
 router.route('/generate').get((req,res) => {
-    const sub = req.query.sub
-    MealData.find({"date" : {$regex : sub}})
+    const sub = req.query.sub;
+    const mess = req.query.mess;
+    MealData.find({date : {$regex : sub}, mess: mess})
         .then(mealData => res.json(mealData))
         .catch(err => res.status(400).json('Error: '+ err));
 });
