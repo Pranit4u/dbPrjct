@@ -32,7 +32,7 @@ const Login = ({ setLoginUser }) => {
         if (user.email.length === 0 || user.password.length === 0) {
             return;
         }
-        axios.post("http://localhost:5000/login/add", user)
+        axios.post("https://nitc-mess-manager.herokuapp.com/login/add", user)
             .then(res => {
                 const r = res.data.message;
                 switch (r) {

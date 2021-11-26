@@ -26,7 +26,7 @@ const ChangePassword = ({ user, setLoginUser }) => {
             alert("Incorrect new password entry");
             return;
         }
-        axios.post("http://localhost:5000/changePassword/add", u)
+        axios.post("https://nitc-mess-manager.herokuapp.com/changePassword/add", u)
             .then(res => {
                 const r = res.data.message;
                 switch (r) {

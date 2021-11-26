@@ -24,7 +24,7 @@ const Choose = ({ user, setLoginUser }) => {
         if (mess === "") {
             alert("Choose a mess");
         }
-        axios.post("http://localhost:5000/update/add", { ...user, mess: mess })
+        axios.post("https://nitc-mess-manager.herokuapp.com/update/add", { ...user, mess: mess })
             .then(res => {
                 const r = res.data.message;
                 switch (r) {

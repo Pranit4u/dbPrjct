@@ -7,7 +7,7 @@ router.route('/get').get((req,res) => {
         .then(menuData => res.json(menuData))
         .catch(err => res.status(400).json('Error: '+ err));
 });
-
+// a
 router.route('/generate').get((req,res) => {
     const sub = req.query.sub;
     const mess = req.query.mess;

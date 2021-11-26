@@ -31,7 +31,7 @@ const ViewMenu = ({ user }) => {
     })
 
     const getTodaysMenu = async () => {
-        const res = await axios.get('http://localhost:5000/viewMenu/add');
+        const res = await axios.get('https://nitc-mess-manager.herokuapp.com/viewMenu/add');
         if (res.data.length !== 0) {
             setMenu(res.data[0]);
         }
@@ -51,7 +51,7 @@ const ViewMenu = ({ user }) => {
             mess: user.mess
         }
 
-        axios.post("http://localhost:5000/takeFood/add", data)
+        axios.post("https://nitc-mess-manager.herokuapp.com/takeFood/add", data)
             .then(res => {
                 const r = res.data.message;
                 switch (r) {

@@ -9,7 +9,7 @@ const FeedDetails = ({user}) => {
     });
 
     const getStudents = async() =>{
-        const res = await axios.get('http://localhost:5000/feedDetails/get', {
+        const res = await axios.get('https://nitc-mess-manager.herokuapp.com/feedDetails/get', {
             params: {
               mess: user.mess
             }

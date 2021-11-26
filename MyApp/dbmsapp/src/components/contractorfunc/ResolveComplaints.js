@@ -5,7 +5,7 @@ const ResolveComplaints = ({user}) => {
     const [complaints, setComplaints] = useState([]);
 
     const getComplaints = async() => {
-        const res = await axios.get('http://localhost:5000/resolveComplaints/add',{params:{
+        const res = await axios.get('https://nitc-mess-manager.herokuapp.com/resolveComplaints/add',{params:{
             mess: user.mess
         }});
         if (res.data.length !== 0){
@@ -17,7 +17,7 @@ const ResolveComplaints = ({user}) => {
     }
 
     const resolve = (id) => {
-        axios.post("http://localhost:5000/resolveComplaints/update", {id})
+        axios.post("https://nitc-mess-manager.herokuapp.com/resolveComplaints/update", {id})
             .then(res => {
                 const r = res.data.message;
                 switch (r) {

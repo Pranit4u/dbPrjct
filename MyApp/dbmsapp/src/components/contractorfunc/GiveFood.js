@@ -16,7 +16,7 @@ const GiveFood = () => {
       alert("Enter every meal")
       return
     }
-    axios.post("http://localhost:5000/giveFood/add", { b, l, d, e })
+    axios.post("https://nitc-mess-manager.herokuapp.com/giveFood/add", { b, l, d, e })
       .then(res => {
         const r = res.data.message;
         switch (r) {

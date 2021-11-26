@@ -36,7 +36,7 @@ const Register = () => {
             alert("invalid details");
             return;
         }
-        axios.post("http://localhost:5000/register/add", user)
+        axios.post("https://nitc-mess-manager.herokuapp.com/register/add", user)
             .then(res => {
                 const r = res.data.message;
                 switch (r) {

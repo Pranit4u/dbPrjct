@@ -15,7 +15,7 @@ const Filecomplaint = ({ user }) => {
             alert("Fields are required");
             return;
         }
-        axios.post("http://localhost:5000/complaint/add", complaint)
+        axios.post("https://nitc-mess-manager.herokuapp.com/complaint/add", complaint)
             .then(res => {
                 const r = res.data.message;
                 switch (r) {

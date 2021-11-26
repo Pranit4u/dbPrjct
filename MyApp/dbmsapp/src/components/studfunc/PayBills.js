@@ -16,7 +16,7 @@ const PayBills = ({user}) => {
     }
 
     const getBills = async() =>{
-        const res = await axios.get('http://localhost:5000/bills/get', {
+        const res = await axios.get('https://nitc-mess-manager.herokuapp.com/bills/get', {
             params: {
               roll: user.roll
             }

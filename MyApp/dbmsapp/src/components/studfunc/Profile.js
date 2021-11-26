@@ -23,7 +23,7 @@ const Profile = ({ user, setLoginUser }) => {
             alert("Invalid Data");
             return;
         }
-        axios.post("http://localhost:5000/update/add", u)
+        axios.post("https://nitc-mess-manager.herokuapp.com/update/add", u)
             .then(res => {
                 const r = res.data.message;
                 switch (r) {

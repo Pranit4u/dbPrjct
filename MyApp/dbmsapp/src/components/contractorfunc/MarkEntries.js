@@ -19,7 +19,7 @@ const MarkEntries = ({user}) => {
     } 
 
     const getMeals = async() =>{
-        const res = await axios.get('http://localhost:5000/takeFood/get', {
+        const res = await axios.get('https://nitc-mess-manager.herokuapp.com/takeFood/get', {
             params: {
               mess: user.mess, date:date
             }

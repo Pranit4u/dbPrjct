@@ -3,7 +3,7 @@ let ComplaintData = require('../models/complaint.model');
 
 router.route('/add').get((req,res) => {
     const mess = req.query.mess
-    ComplaintData.find({mess: "B", resolved: false})
+    ComplaintData.find({mess: mess, resolved: false})
         .then(complaintData => res.json(complaintData))
         .catch(err => res.status(400).json('Error: '+ err));
 });

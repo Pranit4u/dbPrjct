@@ -29,7 +29,7 @@ const Generate = ({user}) => {
         let m = d.getMonth()
         let y = d.getFullYear() 
         const s = `${y}-${m<10?`0${m}`:`${m}`}-`
-        const res = await axios.get('http://localhost:5000/bills/generate', {
+        const res = await axios.get('https://nitc-mess-manager.herokuapp.com/bills/generate', {
             params: {
               sub: s,
               mess: user.mess
@@ -61,7 +61,7 @@ const Generate = ({user}) => {
             alert("Enter valid value")
             return
         }
-        axios.post("http://localhost:5000/bills/upload", {bills})
+        axios.post("https://nitc-mess-manager.herokuapp.com/bills/upload", {bills})
             .then(res => {
                 const r = res.data.message;
                 switch (r) {
