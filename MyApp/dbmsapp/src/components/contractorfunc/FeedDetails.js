@@ -21,7 +21,7 @@ const FeedDetails = ({user}) => {
 
     return (
         <div>
-            <h2>Students Enrolled in mess {user.mess}</h2>
+            <a style={{fontSize:30}}>Students Enrolled in mess <b>{user.mess}</b></a><br/>
             {students.length === 0 ? <h4>No Students Registered in your mess</h4> : 
                 <ol>
                 {students.map((student,index)=> {

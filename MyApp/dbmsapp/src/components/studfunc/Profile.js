@@ -7,8 +7,7 @@ const Profile = ({ user, setLoginUser }) => {
     const [u, setUser] = useState(user);
     const [canEdit, setCanEdit] = useState(false);
 
-    const initials = "PD"
-    // const initials = user.firstname.charAt(0).toUpperCase() + user.lastname.charAt(0).toUpperCase();
+    const initials = user.firstname.charAt(0).toUpperCase() + user.lastname.charAt(0).toUpperCase();
 
     const handleChange = e => {
         const { name, value } = e.target

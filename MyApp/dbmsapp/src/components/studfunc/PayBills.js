@@ -26,13 +26,17 @@ const PayBills = ({user}) => {
         }
     }
 
+    
+
     return (
-        bills.length === 0 ? <div>
-        <h2 style={{ textAlign: "center" }} className="text-muted mb-4">No Dues Till Now</h2>
-        <button onClick={goBack} style={{ marginLeft: "45%", marginRight: "55%" }} className="btn btn-sm btn-primary">Go Back</button>
+        <div>
+        {bills.length === 0 ? <div style={{ textAlign: "center" }}>
+        <b >No Dues Till Now</b><br/><br/>
+        <button onClick={goBack}  className="btn btn-sm btn-primary">Go Back</button>
     </div>
      :
-        <div>
+        <div style={{color:"white"}}>
+            <a>Unpaid Bills</a><br/>
             <ul>
             {bills.map((bill,index) => {
                 return(
@@ -44,6 +48,8 @@ const PayBills = ({user}) => {
                 )
             })}
             </ul>
+        <button onClick={goBack}  className="btn btn-sm btn-primary">Go Back</button>
+        </div>}
         </div>
     )
 }

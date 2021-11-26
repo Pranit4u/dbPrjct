@@ -1,6 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const Dashboard = ({user, setLoginUser}) => {
     let navigate = useNavigate();
@@ -10,38 +11,40 @@ const Dashboard = ({user, setLoginUser}) => {
         navigate('/');
     }
     return (
+        // <div style={{minHeight:721, backgroundImage: "url('https://mdbootstrap.com/img/Photos/Others/img%20(50).jpg')", backgroundPosition:"center",backgroundSize:"cover",backgroundRepeat:"no-repeat"}}>
         <div>
-        <div>
-            <a>this is dashboard of {user.email} hi.</a>
-            <h3>this is a {user.isStud ? "Student" : "Contractor"}</h3>
+        <Navbar logout={logout} user={user}/>
+        <div style={{paddingLeft:28,paddingRight:45}}>
+        <div style={{textAlign:"end", color:"#F9F6EE"}}>
+            <a>Welcome <b>{user.firstname}</b> <br/>
+            This is a {user.isStud ? "Student" : "Contractor"} dashboard</a>
         </div>
 
-        <div>
+        <div style={{color:"white"}}>
             {user.isStud ? 
             <ul>
-                <li><button onClick={logout}>LogOut</button></li>
-                <li><nav><Link to="/payBills">Pay Bill</Link></nav></li>
-                <li><nav><Link to="/viewMenu">Take Food</Link></nav></li>
-                <li><nav><Link to="/viewMenu">View Menu</Link></nav></li>
-                <li><nav><Link to="/chooseMess">Choose Mess</Link></nav></li>
-                <li><nav><Link to="/profile">Profile</Link></nav></li>
-                <li><nav><Link to="/changePassword">Change Password</Link></nav></li>
-                <li><nav><Link to="/fileComplaint">File Complaint</Link></nav></li>
+                <li><nav><Link to="/payBills" style={{color:"white"}}>Pay Bill</Link></nav></li><br/>
+                <li><nav><Link to="/viewMenu"style={{color:"white"}}>Take Food</Link></nav></li><br/>
+                <li><nav><Link to="/viewMenu"style={{color:"white"}}>View Menu</Link></nav></li><br/>
+                <li><nav><Link to="/chooseMess"style={{color:"white"}}>Choose Mess</Link></nav></li><br/>
+                <li><nav><Link to="/profile"style={{color:"white"}}>Profile</Link></nav></li><br/>
+                <li><nav><Link to="/changePassword"style={{color:"white"}}>Change Password</Link></nav></li><br/>
+                <li><nav><Link to="/fileComplaint"style={{color:"white"}}>File Complaint</Link></nav></li><br/>
             </ul> : 
 
             <ul>
-                <li><button onClick={logout}>LogOut</button></li>
-                <li><nav><Link to="/feedDetails">Feed Details</Link></nav></li>
-                <li><nav><Link to="/generateBills">Generate Bills</Link></nav></li>
-                <li><nav><Link to="/resolveComplaints">Resolve Complaints</Link></nav></li>
-                <li><nav><Link to="/giveFood">Give Food</Link></nav></li>
-                <li><nav><Link to="/markEntries">Mark Entries</Link></nav></li>
+                 <li><nav><Link to="/feedDetails" style={{color:"white"}}>Feed Details</Link></nav></li><br/>
+                <li><nav><Link to="/generateBills"style={{color:"white"}}>Generate Bills</Link></nav></li><br/>
+                <li><nav><Link to="/resolveComplaints"style={{color:"white"}}>Resolve Complaints</Link></nav></li><br/>
+                <li><nav><Link to="/giveFood"style={{color:"white"}}>Give Food</Link></nav></li><br/>
+                <li><nav><Link to="/markEntries"style={{color:"white"}}>Mark Entries</Link></nav></li><br/>
                 
             </ul> 
 
             }
             
 
+        </div>
         </div>
         </div>
     )

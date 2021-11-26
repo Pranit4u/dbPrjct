@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Login from './components/login/Login'
 import Register from './components/register/Register';
@@ -19,39 +19,42 @@ import MarkEntries from './components/contractorfunc/MarkEntries';
 
 function App() {
 
-  const [user,setLoginUser] = useState({
- 
+  const [user, setLoginUser] = useState({
   })
 
   return (
-    <Router>
-      <div className="container">
+    <div style={{minHeight:721, backgroundImage: "url('https://mdbootstrap.com/img/Photos/Others/img%20(50).jpg')", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
+      <Router>
         <Routes>
-        <Route path="/" element={user && user.email ? <Dashboard user= {user} setLoginUser = {setLoginUser}/> : <ToLogin />} /> 
-        <Route path="/register" element={<Register />} />
-        <Route path="/feedDetails" element={<FeedDetails user={user}/>} />
-        <Route path="/login" element={<Login setLoginUser = {setLoginUser}/>} />
-        <Route path="/fileComplaint" element={<Filecomplaint user={user}/>} />
-        <Route path="/changePassword" element={<ChangePassword user={user} setLoginUser = {setLoginUser}/>} />
-        <Route path="/profile" element={<Profile user={user} setLoginUser = {setLoginUser}/>} />
-        <Route path="/chooseMess" element={<ChooseMess user={user} setLoginUser = {setLoginUser}/>} />
-        <Route path="/viewMenu" element={<ViewMenu user={user} />} />
-        <Route path="/payBills" element={<PayBills user={user} />} />
-        <Route path="/resolveComplaints" element={<ResolveComplaints user={user} />} />
-        <Route path="/giveFood" element={<GiveFood user={user} />} />
-        <Route path="/generateBills" element={<GenerateBills user={user} />} />
-        <Route path="/markEntries" element={<MarkEntries user={user} />} />
+          <Route path="/" element={user && user.email ? <Dashboard user={user} setLoginUser={setLoginUser} /> : <ToLogin />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/feedDetails" element={<FeedDetails user={user} />} />
+          <Route path="/login" element={<Login setLoginUser={setLoginUser} />} />
+          <Route path="/fileComplaint" element={<Filecomplaint user={user} />} />
+          <Route path="/changePassword" element={<ChangePassword user={user} setLoginUser={setLoginUser} />} />
+          <Route path="/profile" element={<Profile user={user} setLoginUser={setLoginUser} />} />
+          <Route path="/chooseMess" element={<ChooseMess user={user} setLoginUser={setLoginUser} />} />
+          <Route path="/viewMenu" element={<ViewMenu user={user} />} />
+          <Route path="/payBills" element={<PayBills user={user} />} />
+          <Route path="/resolveComplaints" element={<ResolveComplaints user={user} />} />
+          <Route path="/giveFood" element={<GiveFood user={user} />} />
+          <Route path="/generateBills" element={<GenerateBills user={user} />} />
+          <Route path="/markEntries" element={<MarkEntries user={user} />} />
 
-      </Routes>
-      </div>
-    </Router>
-    
+        </Routes>
+       </Router>
+    </div>
+
   );
 }
 
-function ToLogin(){
+function ToLogin() {
   return (
-    <Link to="/login">Log In </Link>
+<div style={{ color: "white", textAlign:"center"}}>
+  You are logged out!<br/><br/>
+<Link to="/login" style={{ color: "white" }} className="btn btn-sm btn-primary">Log In </Link>
+
+</div>
   )
 }
 

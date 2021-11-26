@@ -7,7 +7,7 @@ const ChooseMess = ({ user, setLoginUser }) => {
     const date = d.getDate();
     console.log(user)
     return (
-        date === 25 ? <Choose user={user} setLoginUser={setLoginUser} /> : <Temp />
+        date === 1 ? <Choose user={user} setLoginUser={setLoginUser} /> : <Temp />
     )
 }
 

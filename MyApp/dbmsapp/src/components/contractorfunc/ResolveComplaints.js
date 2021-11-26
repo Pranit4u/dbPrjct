@@ -41,9 +41,9 @@ const ResolveComplaints = ({user}) => {
 
     return (
         <div>
-            <h2>Complaints</h2>
+            <a style={{fontSize:30}}>Complaints</a><br/>
             {complaints.length === 0 ? "No Complaints" : <div></div>}
-            <ul>
+            <ul style={{color:"white"}}>
                 {complaints.map((complaint) => {
                     return(
                         <li key={complaint._id}>

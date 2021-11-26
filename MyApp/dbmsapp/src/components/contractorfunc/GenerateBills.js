@@ -5,9 +5,8 @@ const GenerateBills = ({user}) => {
     const d = new Date;
     const date = d.getDate();
     return (
-        date === 24 ? <Generate user={user}/> : <div>You can perform this action only at start of the month</div>
+        date === 1 ? <Generate user={user}/> : <div>You can perform this action only at start of the month</div>
     )
-   
 }
 
 const Generate = ({user}) => {
@@ -81,15 +80,15 @@ const Generate = ({user}) => {
     }
 
     return (
-        <div>
-            <h2>Bills Section</h2>
+        <div style={{color:"white"}}>
+            <a style={{fontSize:30}}>Bills Section</a>
         <form onSubmit={generate}>
             <div>
-            Enter the food cost per day
+            Enter the food cost per day (in Rs.): 
             <input required={true} type="number" value={cost} onChange={handleChange} />
             </div>
             <div>
-                <input type="submit" value="Generate" />
+                <input className="btn btn-sm btn-primary" type="submit" value="Generate" />
             </div>
         </form>
 
@@ -105,7 +104,7 @@ const Generate = ({user}) => {
             </ul>
         }
         <br/>
-        <button onClick={upload}>Upload Bills</button>
+        <button className="btn btn-sm btn-primary" onClick={upload}>Upload Bills</button>
         </div>
     )
 }
