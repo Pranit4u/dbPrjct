@@ -15,7 +15,8 @@ const Register = () => {
         mess: "",
         mob: "",
         email: "",
-        password: ""
+        password: "",
+        isStud: true
     })
 
     const handleChange = e => {
@@ -41,7 +42,7 @@ const Register = () => {
                 const r = res.data.message;
                 switch (r) {
                     case "1":
-                        alert("Bills Generated Successfully");
+                        alert("Student Registered Successfully");
                         navigate('/login');
 
                         break;

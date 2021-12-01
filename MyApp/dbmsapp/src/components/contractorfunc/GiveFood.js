@@ -12,7 +12,7 @@ const GiveFood = () => {
     const l = lunch.filter(Boolean);
     const d = dinner.filter(Boolean);
     const e = extra.filter(Boolean);
-    if (d.length === 0 || l.length === 0 || b.length === 0 || e.length === 0) {
+    if (d.length === 0 || l.length === 0 || b.length === 0) {
       alert("Enter every meal")
       return
     }
