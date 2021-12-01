@@ -5,10 +5,10 @@ import axios from 'axios';
 const ViewMenu = ({ user }) => {
     const date = getCurrentDate();
     const [menu, setMenu] = useState({
-        breakfast: ["11", "11"],
-        lunch: ["11", "11"],
-        dinner: ["11", "11"],
-        extra: ["11", "11"],
+        breakfast: [],
+        lunch: [],
+        dinner: [],
+        extra: [],
         date: date
     });
     const [food, setFood] = useState({

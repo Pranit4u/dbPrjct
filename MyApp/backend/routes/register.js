@@ -10,6 +10,7 @@ router.route('/add').post((req,res) => {
     const mob = req.body.mob;
     const email = req.body.email;
     const password = req.body.password;
+    const isStud = req.body.isStud;
 
     const newStudentData = new StudentData({
         firstname,
@@ -20,6 +21,7 @@ router.route('/add').post((req,res) => {
         mob,
         email,
         password,
+        isStud
     });
 
     newStudentData.save()

@@ -11,6 +11,7 @@ const studentSchema = new Schema({
     mess: {type: String, required: true},
     email: {type: String, required: true},
     password: {type: String, required: true},
+    isStud: {type: Boolean, required: true}
     
 });
 
