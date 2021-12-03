@@ -5,7 +5,7 @@ const GenerateBills = ({user}) => {
     const d = new Date;
     const date = d.getDate();
     return (
-        date === 3 ? <Generate user={user}/> : <div style={{padding:20, textAlign:"center", color:"whiteSmoke", fontSize:35}}>You can perform this action only at start of the month</div>
+        date === 1 ? <Generate user={user}/> : <div style={{padding:20, textAlign:"center", color:"whiteSmoke", fontSize:35}}>You can perform this action only at start of the month</div>
     )
 }
 
