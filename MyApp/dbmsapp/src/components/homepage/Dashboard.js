@@ -24,7 +24,7 @@ const Dashboard = ({user, setLoginUser}) => {
             {user.isStud ? 
             <ul>
                 <li><nav><Link to="/payBills" style={{color:"white"}}>Pay Bill</Link></nav></li><br/>
-                <li><nav><Link to="/viewMenu"style={{color:"white"}}>Take Food</Link></nav></li><br/>
+                <li><nav><Link to="/takeFood"style={{color:"white"}}>Take Food</Link></nav></li><br/>
                 <li><nav><Link to="/viewMenu"style={{color:"white"}}>View Menu</Link></nav></li><br/>
                 <li><nav><Link to="/chooseMess"style={{color:"white"}}>Choose Mess</Link></nav></li><br/>
                 <li><nav><Link to="/profile"style={{color:"white"}}>Profile</Link></nav></li><br/>

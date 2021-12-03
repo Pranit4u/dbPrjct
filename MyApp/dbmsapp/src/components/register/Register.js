@@ -102,12 +102,12 @@ const Register = () => {
                                             <input type="text" id="create-account-email" name="email" value={user.email} onChange={handleChange} className="form-control form-control-alternative" placeholder="Email" /></div>
                                         <div className="form-group focused">
 
-                                            <input type="password" id="create-account-password" name="password" value={user.password} onChange={handleChange} className="form-control form-control-alternative" placeholder="password" /></div>
+                                            <input type="password" id="create-account-password" name="password" minLength={6} value={user.password} onChange={handleChange} className="form-control form-control-alternative" placeholder="password" /></div>
                                     </div>
                                 </div>
                             </div>
                             <div>
-                                <input name="Register" className="btn btn-sm btn-primary" type="submit" />
+                                <input name="Register" className="btn btn-sm btn-primary" value="Register" type="submit" />
                             </div>
                         </form>
                         <br />

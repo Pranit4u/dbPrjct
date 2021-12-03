@@ -41,8 +41,8 @@ const ResolveComplaints = ({user}) => {
 
     return (
         <div>
-            <a style={{fontSize:30}}>Complaints</a><br/>
-            {complaints.length === 0 ? "No Complaints" : <div></div>}
+            <a style={{color:"white", fontSize:30}}><b>Complaints</b></a><br/>
+            {complaints.length === 0 ? <a style={{color:"white"}}>No Complaints</a> : <div></div>}
             <ul style={{color:"white"}}>
                 {complaints.map((complaint) => {
                     return(

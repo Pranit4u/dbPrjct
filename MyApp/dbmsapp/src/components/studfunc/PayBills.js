@@ -29,7 +29,7 @@ const PayBills = ({user}) => {
     
 
     return (
-        <div>
+        <div style={{paddingTop:15}}>
         {bills.length === 0 ? <div style={{ textAlign: "center" }}>
         <b >No Dues Till Now</b><br/><br/>
         <button onClick={goBack}  className="btn btn-sm btn-primary">Go Back</button>

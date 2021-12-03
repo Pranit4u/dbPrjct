@@ -16,6 +16,7 @@ import GiveFood from './components/contractorfunc/GiveFood';
 import GenerateBills from './components/contractorfunc/GenerateBills';
 import FeedDetails from './components/contractorfunc/FeedDetails';
 import MarkEntries from './components/contractorfunc/MarkEntries';
+import TakeFood from './components/studfunc/TakeFood';
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
           <Route path="/profile" element={<Profile user={user} setLoginUser={setLoginUser} />} />
           <Route path="/chooseMess" element={<ChooseMess user={user} setLoginUser={setLoginUser} />} />
           <Route path="/viewMenu" element={<ViewMenu user={user} />} />
+          <Route path="/takeFood" element={<TakeFood user={user} />} />
           <Route path="/payBills" element={<PayBills user={user} />} />
           <Route path="/resolveComplaints" element={<ResolveComplaints user={user} />} />
           <Route path="/giveFood" element={<GiveFood user={user} />} />
@@ -50,9 +52,9 @@ function App() {
 
 function ToLogin() {
   return (
-<div style={{ color: "white", textAlign:"center"}}>
-  You are logged out!<br/><br/>
-<Link to="/login" style={{ color: "white" }} className="btn btn-sm btn-primary">Log In </Link>
+<div className="form-control-label" style={{paddingTop:20, fontSize:44, color: "white", textAlign:"center"}}>
+  Welcome to NITC Mess Automation System<br/><br/>
+<Link to="/login" style={{fontSize:25, color: "white" }} className="btn btn-sm btn-primary">Log In </Link>
 
 </div>
   )

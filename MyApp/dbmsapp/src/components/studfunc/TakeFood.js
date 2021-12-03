@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { getCurrentDate } from '../../utils'
 import axios from 'axios';
 
-const ViewMenu = ({ user }) => {
+const TakeFood = ({ user }) => {
     const date = getCurrentDate();
     const [menu, setMenu] = useState({
         breakfast: [],
@@ -82,7 +82,7 @@ const ViewMenu = ({ user }) => {
                 <div className="card-body">
                     <div className="row align-items-center">
                         <div className="col-8">
-                            <h2 className="text-muted mb-4">View Menu</h2>
+                            <h2 className="text-muted mb-4">Take Food</h2>
                         </div>
                     </div>
                     <form onSubmit={takeFood}>
@@ -91,53 +91,49 @@ const ViewMenu = ({ user }) => {
                                 <div className="col-lg-6">
                                     <div className="form-group focused">
                                         <div>
-                                            <h2 className="form-control-label">Breakfast</h2>
-                                            <ul>
+                                            <h2 className="form-control-label">Choose Breakfast</h2>
                                             {menu.breakfast.map((val, index) => {
                                                 return (
-                                                    <li>
-                                                        {val}
-                                                    </li>
+                                                    <div>
+                                                        <input type="radio" checked={food.breakfast === val} id={val} name="breakfast" value={val} onChange={handleChange} />
+                                                        <label className="form-control-label" htmlFor={val}>{val}</label>
+                                                    </div>
                                                 )
                                             })}
-                                            </ul>
                                         </div>
 
                                         <div>
-                                            <h2 className="form-control-label">Lunch</h2>
-                                            <ul>
+                                            <h2 className="form-control-label">Choose Lunch</h2>
                                             {menu.lunch.map((val, index) => {
                                                 return (
-                                                    <li>
-                                                        {val}
-                                                    </li>
+                                                    <div>
+                                                        <input type="radio" checked={food.lunch === val} id={val} name="lunch" value={val} onChange={handleChange} />
+                                                        <label className="form-control-label" htmlFor={val}>{val}</label>
+                                                    </div>
                                                 )
                                             })}
-                                            </ul>
                                         </div>
                                         <div>
-                                            <h2 className="form-control-label">Dinner</h2>
-                                            <ul>
+                                            <h2 className="form-control-label">Choose dinner</h2>
                                             {menu.dinner.map((val, index) => {
                                                 return (
-                                                    <li>
-                                                        {val}
-                                                    </li>
+                                                    <div>
+                                                        <input type="radio" checked={food.dinner === val} id={val} name="dinner" value={val} onChange={handleChange} />
+                                                        <label className="form-control-label" htmlFor={val}>{val}</label>
+                                                    </div>
                                                 )
                                             })}
-                                            </ul>
                                         </div>
                                         <div>
-                                            <h2 className="form-control-label">Extras</h2>
-                                            <ul>
+                                            <h2 className="form-control-label">Choose Extras</h2>
                                             {menu.extra.map((val, index) => {
                                                 return (
-                                                    <li>
-                                                        {val}
-                                                    </li>
+                                                    <div>
+                                                        <input type="radio" checked={food.extra === val} id={val} name="extra" value={val} onChange={handleChange} />
+                                                        <label className="form-control-label" htmlFor={val}>{val}</label>
+                                                    </div>
                                                 )
                                             })}
-                                            </ul>
                                         </div>
                                     </div>
                                 </div>
@@ -149,4 +145,4 @@ const ViewMenu = ({ user }) => {
     )
 }
 
-export default ViewMenu
+export default TakeFood

@@ -81,8 +81,8 @@ const Temp = () => {
     }
     return (
         <div>
-            <h1 style={{ textAlign: "center" }} className="text-muted mb-4">You can perform this action only at start of the month</h1>
-            <button onClick={goBack} style={{ marginLeft: "45%", marginRight: "55%" }} className="btn btn-sm btn-primary">Go Back</button>
+            <h1 style={{ textAlign: "center", color:"white"}}>You can perform this action only at start of the month</h1>
+            <button onClick={goBack} style={{ marginLeft: "45%" }} className="btn btn-sm btn-primary">Go Back</button>
         </div>
     )
 }

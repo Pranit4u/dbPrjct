@@ -20,18 +20,22 @@ const FeedDetails = ({user}) => {
     }
 
     return (
-        <div>
-            <a style={{fontSize:30}}>Students Enrolled in mess <b>{user.mess}</b></a><br/>
+        <div style={{padding:15}}>
+            <a style={{fontSize:30, color:"black"}}>Students Enrolled in mess <b>{user.mess}</b></a><br/>
             {students.length === 0 ? <h4>No Students Registered in your mess</h4> : 
                 <ol>
                 {students.map((student,index)=> {
                     return(
-                        <li key={index}>
-                            Name: {student.firstname} {student.lastname}<br/>
-                            Roll: {student.roll}<br/>
-                            Mob: {student.mob}<br/>
-                            Email: {student.email}
+                        <div>
+                        <li key={index} style={{color:"black"}}>
+                            <b>Name:</b> <a style={{color:"white"}}>{student.firstname} {student.lastname}</a><br/>
+                            <b>Roll:</b> <a style={{color:"white"}}>{student.roll}</a><br/>
+                            <b>Mob:</b> <a style={{color:"white"}}>{student.mob}</a><br/>
+                            <b>Email:</b> <a style={{color:"white"}}>{student.email}</a>
                         </li>
+                        <br/>
+                        </div>
+
                     )
                 })}
                 </ol>

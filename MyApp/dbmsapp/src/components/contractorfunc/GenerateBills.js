@@ -5,7 +5,7 @@ const GenerateBills = ({user}) => {
     const d = new Date;
     const date = d.getDate();
     return (
-        date === 1 ? <Generate user={user}/> : <div>You can perform this action only at start of the month</div>
+        date === 3 ? <Generate user={user}/> : <div style={{padding:20, textAlign:"center", color:"whiteSmoke", fontSize:35}}>You can perform this action only at start of the month</div>
     )
 }
 
@@ -80,7 +80,7 @@ const Generate = ({user}) => {
     }
 
     return (
-        <div style={{color:"white"}}>
+        <div style={{color:"white", padding:25}}>
             <a style={{fontSize:30}}>Bills Section</a>
         <form onSubmit={generate}>
             <div>

@@ -98,7 +98,7 @@ const Login = ({ setLoginUser }) => {
                                 </div>
                             </div>
                             <div>
-                                <input name="Login" className="btn btn-sm btn-primary" type="submit" />
+                                <input name="Login" className="btn btn-sm btn-primary" value="LogIn" type="submit" />
                             </div>
                         </form>
 

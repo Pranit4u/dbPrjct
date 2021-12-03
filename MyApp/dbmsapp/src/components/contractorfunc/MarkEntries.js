@@ -31,18 +31,21 @@ const MarkEntries = ({user}) => {
 
     return (
         <div>
-            <a style={{fontSize:30}}>Mark Entry</a>
+            <a style={{color:"black", fontSize:30}}>Mark Entry</a>
             {meals.length === 1 ? <h3>No meals taken today yet</h3> : 
-                <div style={{color:'white'}}>
+                <div style={{color:'black'}}>
                 <ol>
                     {meals.map((meal,index) => {
                     return(
+                        <div>
                         <li key={index}>
-                            Roll: {meal.roll}<br/>
-                            Breakfast: {meal.meal.breakfast}<br/>
-                            Lunch: {meal.meal.lunch}<br/>
-                            Dinner: {meal.meal.dinner}
+                            Roll: <a style={{color:"whiteSmoke"}}>{meal.roll}</a><br/>
+                            Breakfast: <a style={{color:"whiteSmoke"}}>{meal.meal.breakfast}</a><br/>
+                            Lunch: <a style={{color:"whiteSmoke"}}>{meal.meal.lunch}</a><br/>
+                            Dinner: <a style={{color:"whiteSmoke"}}>{meal.meal.dinner}</a>
                         </li>
+                        <br/>
+                        </div>
                     )
                 })}
                 </ol>
