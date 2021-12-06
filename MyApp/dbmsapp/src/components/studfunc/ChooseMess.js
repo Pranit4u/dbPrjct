@@ -7,7 +7,8 @@ const ChooseMess = ({ user, setLoginUser }) => {
     const date = d.getDate();
     console.log(user)
     return (
-        date === 1 ? <Choose user={user} setLoginUser={setLoginUser} /> : <Temp />
+        
+        date === 3 ? <Choose user={user} setLoginUser={setLoginUser} /> : <Temp />
     )
 }
 
@@ -24,6 +25,7 @@ const Choose = ({ user, setLoginUser }) => {
         if (mess === "") {
             alert("Choose a mess");
         }
+
         axios.post("https://nitc-mess-manager.herokuapp.com/update/add", { ...user, mess: mess })
             .then(res => {
                 const r = res.data.message;
@@ -42,6 +44,7 @@ const Choose = ({ user, setLoginUser }) => {
             .catch((e) => {
                 console.log("error catch ->" + e)
             })
+            
     }
 
     return (

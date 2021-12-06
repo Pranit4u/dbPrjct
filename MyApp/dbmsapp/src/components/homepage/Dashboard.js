@@ -32,7 +32,7 @@ const Dashboard = ({user, setLoginUser}) => {
             </ul> : 
 
             <ul>
-                 <li><nav><Link to="/feedDetails" style={{color:"white"}}>Feed Details</Link></nav></li><br/>
+                 <li><nav><Link to="/feedDetails" style={{color:"white"}}>Fed Details</Link></nav></li><br/>
                 <li><nav><Link to="/giveFood"style={{color:"white"}}>Give Food</Link></nav></li><br/>
                 <li><nav><Link to="/markEntries"style={{color:"white"}}>Mark Entries</Link></nav></li><br/>
                 <li><nav><Link to="/generateBills"style={{color:"white"}}>Generate Bills</Link></nav></li><br/>

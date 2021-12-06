@@ -24,7 +24,7 @@ function App() {
   })
 
   return (
-    <div style={{minHeight:721, backgroundImage: "url('https://mdbootstrap.com/img/Photos/Others/img%20(50).jpg')", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
+    <div style={{ minHeight: 721, backgroundImage: "url('https://mdbootstrap.com/img/Photos/Others/img%20(50).jpg')", backgroundPosition: "center", backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
       <Router>
         <Routes>
           <Route path="/" element={user && user.email ? <Dashboard user={user} setLoginUser={setLoginUser} /> : <ToLogin />} />
@@ -44,20 +44,23 @@ function App() {
           <Route path="/markEntries" element={<MarkEntries user={user} />} />
 
         </Routes>
-       </Router>
+      </Router>
     </div>
 
   );
 }
 
 function ToLogin() {
-  return (
-<div className="form-control-label" style={{paddingTop:20, fontSize:44, color: "white", textAlign:"center"}}>
-  Welcome to NITC Mess Automation System<br/><br/>
-<Link to="/login" style={{fontSize:25, color: "white" }} className="btn btn-sm btn-primary">Log In </Link>
 
-</div>
+  return (
+    <div className="form-control-label" style={{ paddingTop: 20, fontSize: 44, color: "white", textAlign: "center" }}>
+      Welcome to NITC Mess Automation System<br /><br />
+      
+      <Link to="/login" style={{ fontSize: 25, color: "white" }} className="btn btn-sm btn-primary">Log In </Link>
+
+    </div>
   )
+
 }
 
 export default App;

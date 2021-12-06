@@ -6,8 +6,10 @@ import { useNavigate } from 'react-router-dom';
 const PayBills = ({user}) => {
     const [bills, setBills] = useState([]);
 
-    useEffect(() => {
+    useEffect ( () => {
+
         getBills()
+
     });
 
     let navigate = useNavigate();

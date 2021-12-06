@@ -29,11 +29,14 @@ const Login = ({ setLoginUser }) => {
 
     const login = (e) => {
         e.preventDefault()
+
         if (user.email.length === 0 || user.password.length === 0) {
             return;
         }
+        
         axios.post("https://nitc-mess-manager.herokuapp.com/login/add", user)
             .then(res => {
+
                 const r = res.data.message;
                 switch (r) {
                     case "-1":

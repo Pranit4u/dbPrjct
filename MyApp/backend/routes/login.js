@@ -2,8 +2,12 @@ const router = require('express').Router();
 let StudentData = require('../models/student.model');
 let ContractorData = require('../models/contractor.model');
 router.route('/add').post((req,res) => {
+
+
     const {isStud,email,password} =req.body;
+
     if(isStud === "student"){
+
         StudentData.findOne({email:email},(err,user)=>{
             if(err) throw err;
             if(user){
@@ -17,6 +21,7 @@ router.route('/add').post((req,res) => {
             }
         })
     }
+    
     else{
         ContractorData.findOne({email:email},(err,user)=>{
             if(err) throw err;

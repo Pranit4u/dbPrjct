@@ -143,8 +143,7 @@ const ViewMenu = ({ user }) => {
                                 </div>
                             </div>
                         </div>
-                        <input className="btn btn-sm btn-primary" value="Take Food" type="submit" />
-                    </form>
+                        </form>
                 </div></div></div>
     )
 }
