@@ -8,7 +8,7 @@ const ChooseMess = ({ user, setLoginUser }) => {
     console.log(user)
     return (
         
-        date === 3 ? <Choose user={user} setLoginUser={setLoginUser} /> : <Temp />
+        date === 7 ? <Choose user={user} setLoginUser={setLoginUser} /> : <Temp />
     )
 }
 
